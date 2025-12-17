@@ -19,5 +19,16 @@ public class Studentcontroller{
     Studentservice studentservice;
 
     @postMapping("/add")
-    public StudentEntity post
+    public StudentEntity post(@RequestBody StudentEntity student){
+        return studentservice.saveData(student);
+    }
+     @GetMapping("/get")
+     public List<StudentEntity>getAllStudents(){
+        return studentservice.getAllStudentById(id);
+     }
+
+     @PutMapping("/update/{id}")
+     public string update(@RequestBody StudentEntity student,@pathVariable int id){
+        optional<StudentEntity>existingStudent = stu
+     }
 }
