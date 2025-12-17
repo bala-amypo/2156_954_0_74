@@ -31,6 +31,10 @@ public class StudentEntity{
     public StudentEntity(int id,String name,String email){
         this.id = id;
         this.name = name;
-        this
+        this.email=email;
+    }
+
+    public StudentEntity(){
+        
     }
 }
