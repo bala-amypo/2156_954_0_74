@@ -44,7 +44,10 @@ public class Studentcontroller{
      public string delete(@pathVariable int id){
         optional<StudentEntity>student = studentservice.getStudentById(id);
         if(student.isPresent()){
-            studentservice.
+            studentservice.deleteStudentById(id);
+            return "Student deleted successfully";
+        }else{
+            return "Student not found";
         }
      }
 }
