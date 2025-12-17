@@ -13,6 +13,21 @@ public class StudentServiceImpl implements StudentService{
     @override
     public student insertStudent(Student st){
         st.setId(counter++);
-        store.put(st.getId(),st):
+        store.put(st.getId(),st);
+        return st;
+    }
+
+    @override
+    public List<Student> getAllStudents(){
+        return new ArrayList<>(Store.values());
+    }
+
+    @override
+    public Optional<Student> hetOne/student(Long id){
+        return Optional.ofNullable(store.get(id));
+    }
+
+    @overridepublic void deleteStudent(Long id){
+        store.remove(id);
     }
 }
