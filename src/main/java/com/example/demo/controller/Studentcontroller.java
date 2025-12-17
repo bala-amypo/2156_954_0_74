@@ -29,6 +29,22 @@ public class Studentcontroller{
 
      @PutMapping("/update/{id}")
      public string update(@RequestBody StudentEntity student,@pathVariable int id){
-        optional<StudentEntity>existingStudent = stu
+        optional<StudentEntity>existingStudent = studentservice.getStudentById(id);
+        if(existingStudent.isPresent()){
+            student.setId(id);
+            studentservice.insertStudent(student);
+            return "Student updated successfully";
+        }
+        else{
+            return "Student not found";
+        }
+     }
+
+     @DeleteMapping("/delete/{id}")
+     public string delete(@pathVariable int id){
+        optional<StudentEntity>student = studentservice.getStudentById(id);
+        if(student.isPresent()){
+            studentservice.
+        }
      }
 }
